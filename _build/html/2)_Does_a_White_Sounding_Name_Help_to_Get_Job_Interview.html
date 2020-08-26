@@ -1,0 +1,1210 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2) Does a White-Sounding Name Help to Get a Job Interview? &#8212; Causal Inference with Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3) Are Females More Likely to Complete High School Under Islamic or Secular Regime?" href="3)_Are_Females_More_Likely_to_Complete_High_School_Under_Islamic_or_Secular_Regime.html" />
+    <link rel="prev" title="1) Are Chess Players More Rational than the Rest of the Population?" href="1)_Are_Chess_Players_more_Rational_than_the_Rest_of_the_Population.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Causal Inference with Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1)_Are_Chess_Players_more_Rational_than_the_Rest_of_the_Population.html">
+   1) Are Chess Players More Rational than the Rest of the Population?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2) Does a White-Sounding Name Help to Get a Job Interview?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3)_Are_Females_More_Likely_to_Complete_High_School_Under_Islamic_or_Secular_Regime.html">
+   3) Are Females More Likely to Complete High School Under Islamic or Secular Regime?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4)_Do_Protestants_Prefer_Less_Leisure_than_Catholics.html">
+   4) Do Protestants Prefer Less Leisure than Catholics?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5)_Could_the_Federal_Reserve_Prevent_the_Great_Depression.html">
+   5) Could the Federal Reserve Prevent the Great Depression?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2)_Does_a_White_Sounding_Name_Help_to_Get_Job_Interview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/causal-methods/Book/master?urlpath=tree/2)_Does_a_White_Sounding_Name_Help_to_Get_Job_Interview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/causal-methods/Book/blob/master/2)_Does_a_White_Sounding_Name_Help_to_Get_Job_Interview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="does-a-white-sounding-name-help-to-get-a-job-interview">
+<h1>2) Does a White-Sounding Name Help to Get a Job Interview?<a class="headerlink" href="#does-a-white-sounding-name-help-to-get-a-job-interview" title="Permalink to this headline">¶</a></h1>
+<p>Vitor Kamada</p>
+<p>E-mail: econometrics.methods&#64;gmail.com</p>
+<p>Last updated: 8-8-2020</p>
+<p>Let’s load the dataset from Bertrand &amp; Mullainathan (2004).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/causal-methods/Data/raw/master/&quot;</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;lakisha_aer.dta&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>ad</th>
+      <th>education</th>
+      <th>ofjobs</th>
+      <th>yearsexp</th>
+      <th>honors</th>
+      <th>volunteer</th>
+      <th>military</th>
+      <th>empholes</th>
+      <th>occupspecific</th>
+      <th>...</th>
+      <th>compreq</th>
+      <th>orgreq</th>
+      <th>manuf</th>
+      <th>transcom</th>
+      <th>bankreal</th>
+      <th>trade</th>
+      <th>busservice</th>
+      <th>othservice</th>
+      <th>missind</th>
+      <th>ownership</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>b</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>17</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>316</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>b</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>19</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>313</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>4 rows × 65 columns</p>
+</div></div></div>
+</div>
+<p>Let’s restrict the analysis to the variables ‘call’ and ‘race’.</p>
+<p>call: 1 = applicant was called back to interview; and 0 otherwise.</p>
+<p>race: w = White, and b = Black.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">callback</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;call&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">)]</span>
+<span class="n">callback</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>call</th>
+      <th>race</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4865</th>
+      <td>0.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>4866</th>
+      <td>0.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>4867</th>
+      <td>0.0</td>
+      <td>w</td>
+    </tr>
+    <tr>
+      <th>4868</th>
+      <td>0.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>4869</th>
+      <td>0.0</td>
+      <td>w</td>
+    </tr>
+  </tbody>
+</table>
+<p>4870 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>Let’s calculate the number of observations (size) and the mean of the variable ‘call’ broken by race.</p>
+<p>We have the same quantity (2435) curriculum vitae (CVs) for Black and White applicants.</p>
+<p>Only 6.4% of Blacks received a callback; whereas 9.6% of Whites received a callback.</p>
+<p>Therefore, White applicants are about 50% more likely to receive a callback for interview.</p>
+<p>In other words, for each 10 CVs that White applicants send to get 1 job interview, Black applicants need to send 15 CVs to get the same outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">callback</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">call</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>size</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>race</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b</th>
+      <td>2435.0</td>
+      <td>0.064476</td>
+    </tr>
+    <tr>
+      <th>w</th>
+      <td>2435.0</td>
+      <td>0.096509</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Somebody might argue that this difference of 3.2% (9.6 - 6.4) does not necessary implies discrimination against Blacks.</p>
+<p>You could argue that White applicants receives more callbacks, because they have more education, experience, skills, and not because of the skin color.</p>
+<p>Specifically, you could argue that White applicant is more likely to receive a callback, because they are more likely to have a college degree (signal of qualifications) than Blacks.</p>
+<p>If you extract a random sample of US population or check data from US Census, you will see that Blacks are less likely to have a college degree than Whites. This is an undisputable fact.</p>
+<p>Let’s check the proportion of Blacks and Whites with college degree in the dataset from Bertrand &amp; Mullainathan (2004)</p>
+<p>Originally, college graduate was coded as 4 in the variable ‘education’. 3 = some college. 2 = high school graduate. 1 = some high school. 0 not reported.</p>
+<p>Let’s create the variable ‘college’ = 1, if a person completes a college degree; and 0 otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that 72.2% of Black Applicants have a college degree. The proportion of Whites with college degree is very similar 71.6%.</p>
+<p>Why these numbers are not representative of US population and the values closer to each other?</p>
+<p>Because the data is not a random sample extraction from reality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">college</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">)]</span>
+<span class="n">college</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">college</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>size</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>race</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b</th>
+      <td>2435</td>
+      <td>0.722793</td>
+    </tr>
+    <tr>
+      <th>w</th>
+      <td>2435</td>
+      <td>0.716222</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Bertrand &amp; Mullainathan (2004) produced experimental data. They created the CVs. They randomly assigned a Black sounding name (ex: Lakish or Jamal) to half of the CVs and a White sounding name (ex: Emily or Greg) to the other half.</p>
+<p>Randomization of the race via name makes the two categories White and Black equal (very similar) to each other for all observable and non-observable factors.</p>
+<p>Let’s check this statement for other factors in the CVs. The names of the variables are self-explanatory, and more information can be obtained reading the paper from Bertrand &amp; Mullainathan (2004).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resume</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsexp&#39;</span><span class="p">,</span> <span class="s1">&#39;volunteer&#39;</span><span class="p">,</span> <span class="s1">&#39;military&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;workinschool&#39;</span><span class="p">,</span> <span class="s1">&#39;honors&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;computerskills&#39;</span><span class="p">,</span> <span class="s1">&#39;specialskills&#39;</span><span class="p">]</span>
+<span class="n">both</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">resume</span><span class="p">]</span>
+<span class="n">both</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>college</th>
+      <th>yearsexp</th>
+      <th>volunteer</th>
+      <th>military</th>
+      <th>email</th>
+      <th>workinschool</th>
+      <th>honors</th>
+      <th>computerskills</th>
+      <th>specialskills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s use a different code to calculate the mean of the variables for the whole sample (both Whites and Blacks) and broken samples between Blacks and Whites.</p>
+<p>See that the average years of experience (yearsexp) is 7.84 for the whole sample, 7.82 for Blacks, and 7.85 for Whites.</p>
+<p>If you check all variables the mean values for Blacks are very closer to the mean values for Whites. This is the consequence of randomization.</p>
+<p>We also calculate the standard deviation (std), a measure of variation around the mean. Note that the standard deviation is pretty much the same between the whole sample and split samples. Like the mean, you don’t suppose to see much difference among standard deviations in the case of experimental data.</p>
+<p>The standard deviation of the variable years of experience is 5 years. We can state roughly the most part of observations (about 68%) is between 1 std below the mean and 1 std above the mean, that is, between [2.84, 12.84].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">black</span> <span class="o">=</span> <span class="n">both</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">white</span> <span class="o">=</span> <span class="n">both</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;w&#39;</span><span class="p">]</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mean_both&#39;</span><span class="p">:</span> <span class="n">both</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>   <span class="s1">&#39;std_both&#39;</span><span class="p">:</span> <span class="n">both</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span>
+           <span class="s1">&#39;mean_black&#39;</span><span class="p">:</span> <span class="n">black</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;std_black&#39;</span><span class="p">:</span> <span class="n">black</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span>
+           <span class="s1">&#39;mean_white&#39;</span><span class="p">:</span> <span class="n">white</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;std_white&#39;</span><span class="p">:</span> <span class="n">white</span><span class="o">.</span><span class="n">std</span><span class="p">()}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_both</th>
+      <th>std_both</th>
+      <th>mean_black</th>
+      <th>std_black</th>
+      <th>mean_white</th>
+      <th>std_white</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>college</th>
+      <td>0.719507</td>
+      <td>0.449286</td>
+      <td>0.722793</td>
+      <td>0.447712</td>
+      <td>0.716222</td>
+      <td>0.450923</td>
+    </tr>
+    <tr>
+      <th>yearsexp</th>
+      <td>7.842916</td>
+      <td>5.044612</td>
+      <td>7.829569</td>
+      <td>5.010764</td>
+      <td>7.856263</td>
+      <td>5.079228</td>
+    </tr>
+    <tr>
+      <th>volunteer</th>
+      <td>0.411499</td>
+      <td>0.492156</td>
+      <td>0.414374</td>
+      <td>0.492715</td>
+      <td>0.408624</td>
+      <td>0.491681</td>
+    </tr>
+    <tr>
+      <th>military</th>
+      <td>0.097125</td>
+      <td>0.296159</td>
+      <td>0.101848</td>
+      <td>0.302511</td>
+      <td>0.092402</td>
+      <td>0.289653</td>
+    </tr>
+    <tr>
+      <th>email</th>
+      <td>0.479261</td>
+      <td>0.499621</td>
+      <td>0.479671</td>
+      <td>0.499689</td>
+      <td>0.478850</td>
+      <td>0.499655</td>
+    </tr>
+    <tr>
+      <th>workinschool</th>
+      <td>0.559548</td>
+      <td>0.496492</td>
+      <td>0.560986</td>
+      <td>0.496369</td>
+      <td>0.558111</td>
+      <td>0.496714</td>
+    </tr>
+    <tr>
+      <th>honors</th>
+      <td>0.052772</td>
+      <td>0.223601</td>
+      <td>0.051335</td>
+      <td>0.220725</td>
+      <td>0.054209</td>
+      <td>0.226477</td>
+    </tr>
+    <tr>
+      <th>computerskills</th>
+      <td>0.820534</td>
+      <td>0.383782</td>
+      <td>0.832444</td>
+      <td>0.373549</td>
+      <td>0.808624</td>
+      <td>0.393465</td>
+    </tr>
+    <tr>
+      <th>specialskills</th>
+      <td>0.328747</td>
+      <td>0.469806</td>
+      <td>0.327310</td>
+      <td>0.469328</td>
+      <td>0.330185</td>
+      <td>0.470376</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Why we care so much about the table above that shows that the average White and average Black applicants are pretty much the same?</p>
+<p>Because the argument that White applicants are more likely to receive a callback due to their higher level of education cannot hold, if both groups White and Black applicants have similar level of education.</p>
+<p>Neither unobserved factors nor unmeasurable factors like motivation, psychological traits, etc., can be used to justify the different rate of callbacks.</p>
+<p>In an experiment, only the treatment variable (race) is exogenously manipulated. Everything else is kept constant, consequently variations in the outcome variable (callbacks) can only be attribute to the variations in the treatment variable (race).</p>
+<p>Therefore, experimental study eliminates all confound factors presented in observational studies.</p>
+<p>Experiment is the gold standard in Hard Science. The most rigorous way to claim causality.</p>
+<p>Surveys, census, observational data direct extracted from reality cannot be used to establish causality. It might useful to capture association, but not causation.</p>
+<p>Formally, we can write a causal model below. The 3 lines are equivalent. We can claim that <span class="math notranslate nohighlight">\(\beta\)</span> has “causal” interpretation, only if the treatment variables (<span class="math notranslate nohighlight">\(T\)</span>) was randomized. In the absence of randomization, <span class="math notranslate nohighlight">\(\beta\)</span> captures only correlation.</p>
+<div class="math notranslate nohighlight">
+\[Outcome = Intercept + Slope*Treatment + Error\]</div>
+<div class="math notranslate nohighlight">
+\[y=Intercept+\beta T +\epsilon\]</div>
+<div class="math notranslate nohighlight">
+\[callbacks = Intercept+\beta race+\epsilon\]</div>
+<p>Let’s estimate the model above, using the ordinary least square (OLS) method.</p>
+<p>In the stasmodels library of Python, the intercept is a constant with value of 1.</p>
+<p>Let’s create the variable ‘treatment’: 1 = Black applicant, and 0 = White applicant.</p>
+<p>The variable ‘call’ is the outcome variable (y).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Treatment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">==</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="n">ols</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;Treatment&#39;</span><span class="p">]],</span>
+                    <span class="n">missing</span><span class="o">=</span><span class="s1">&#39;drop&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s print the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ols</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      0.0965      0.006     17.532      0.000       0.086       0.107
+Treatment     -0.0320      0.008     -4.115      0.000      -0.047      -0.017
+==============================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can write the fitted model as:</p>
+<div class="math notranslate nohighlight">
+\[\widehat{callbacks} = 0.0965-0.032\widehat{Treatment}\]</div>
+<p>We already got the coefficients above with the code in the beginning of this section that I will reproduce again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">callback</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">call</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>size</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>race</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b</th>
+      <td>2435.0</td>
+      <td>0.064476</td>
+    </tr>
+    <tr>
+      <th>w</th>
+      <td>2435.0</td>
+      <td>0.096509</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>See that the value of Intercept is 9.6%. This is the proportion of White applicants that received a callback for interview.</p>
+<p>The coefficient of the treatment variable is 3.2%. The interpretation is that being a Black apllicant “causes” to receive -3.2% ( 6.4% - 9.6%) less callbacks for interview.</p>
+<p>Remember that 3.2% is a big magnitude, as it represents about 50% differential. In practical terms, Black applicants has to send 15 CVs to secure one interview rather than 10 CVs for White applicants.</p>
+<p>The coefficient of the treatment variable is also statistically significant at level of significance (<span class="math notranslate nohighlight">\(\alpha\)</span> = 1%).</p>
+<p>The t-value of -4.115 is the ratio:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{coefficient}{standard\ error} =\frac{-0.032}{0.008} = -4.115\]</div>
+<p>The null hypothesis is:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \beta=0\]</div>
+<p>The t-value of -4 means that the observed value (-3.2%) is 4 standard deviation below the mean (<span class="math notranslate nohighlight">\(\beta=0\)</span>). The p-value or probability  of getting this value at chance is virtually 0. Therefore, we reject the null hypothesis that the magnitude of treatment is 0.</p>
+<p>What defines an experiment?</p>
+<p>The randomization of the treatment variable (T).</p>
+<p>It automatically makes the treatment variable (T) independent of other factors:</p>
+<div class="math notranslate nohighlight">
+\[T \perp Other \ Factors\]</div>
+<p>In an experiment, the addition of other factors in the regression cannot affect the estimation of the coefficient of the treatment variable (<span class="math notranslate nohighlight">\(\beta\)</span>). If you see substantial changes in <span class="math notranslate nohighlight">\(\beta\)</span>, you can infer that you are not working with experimental data.</p>
+<p>Note that in observational studies, you must always control for other factors. Otherwise, you will have the omitted variable bias problem.</p>
+<p>Let’s estimate the multiple regression below:</p>
+<div class="math notranslate nohighlight">
+\[y=Intercept+\beta T + Other\ Factors+\epsilon\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">other_factors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsexp&#39;</span><span class="p">,</span> <span class="s1">&#39;volunteer&#39;</span><span class="p">,</span> <span class="s1">&#39;military&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;workinschool&#39;</span><span class="p">,</span> <span class="s1">&#39;honors&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;computerskills&#39;</span><span class="p">,</span> <span class="s1">&#39;specialskills&#39;</span><span class="p">]</span>
+<span class="n">multiple_reg</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span>
+                      <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;Treatment&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">other_factors</span><span class="p">],</span>
+                      <span class="n">missing</span><span class="o">=</span><span class="s1">&#39;drop&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that the coefficient of the Treatment (-3.1%) didn’t change much as expected with the additional
+control variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">multiple_reg</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>==================================================================================
+                     coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          0.0547      0.015      3.727      0.000       0.026       0.083
+Treatment         -0.0311      0.008     -4.032      0.000      -0.046      -0.016
+college            0.0068      0.009      0.768      0.443      -0.010       0.024
+yearsexp           0.0029      0.001      3.630      0.000       0.001       0.005
+volunteer         -0.0032      0.011     -0.295      0.768      -0.024       0.018
+military          -0.0033      0.014     -0.232      0.817      -0.032       0.025
+email              0.0143      0.011      1.285      0.199      -0.008       0.036
+workinschool       0.0008      0.009      0.093      0.926      -0.016       0.018
+honors             0.0642      0.018      3.632      0.000       0.030       0.099
+computerskills    -0.0202      0.011     -1.877      0.061      -0.041       0.001
+specialskills      0.0634      0.009      7.376      0.000       0.047       0.080
+==================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>1| In the literature of racial discrimination, there are more than 1000 observational studies for each experimental study. Suppose you read 100 observational studies that indicate that racial discrimination is real. Suppose that you also read 1 experimental study that claims no evidence of racial discrimination. Are you more inclined to accept the result of 100 observational studies or the result of the experimental study? Justify your answer.</p>
+<p>2| Interpret the 4 values of the contingency table below. Specifically, state the meaning and compare the values.</p>
+<p>The variable ‘h’: 1 = higher quality curriculum vitae; 0 = lower quality curriculum vitae. This variable was randomized.</p>
+<p>Other variables were previously defined.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contingency_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Treatment&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">],</span> 
+                                <span class="n">values</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">contingency_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>0.0</th>
+      <th>1.0</th>
+    </tr>
+    <tr>
+      <th>Treatment</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.084983</td>
+      <td>0.107931</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.061881</td>
+      <td>0.067048</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>3| I created an interaction variable ‘h_Treatment’ that is the pairwise multiplication of the variable ‘h’ and ‘treatment’.</p>
+<p>How can you use the coefficients of the regression below to get the values of the contingency table in exercise 2? Show the calculations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;h_Treatment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Treatment&#39;</span><span class="p">]</span>
+<span class="n">interaction</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span>
+                      <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;Treatment&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;h_Treatment&#39;</span><span class="p">]</span> <span class="p">],</span>
+                      <span class="n">missing</span><span class="o">=</span><span class="s1">&#39;drop&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interaction</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>                      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>===============================================================================
+                  coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+Intercept       0.0850      0.008     10.895      0.000       0.070       0.100
+Treatment      -0.0231      0.011     -2.094      0.036      -0.045      -0.001
+h               0.0229      0.011      2.085      0.037       0.001       0.045
+h_Treatment    -0.0178      0.016     -1.142      0.253      -0.048       0.013
+===============================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>4| I run the regression below without the interaction term ‘h_Treatment’. Could I use the coefficients below to get the values of the contingency table in exercise 2?  If yes, show the exact calculations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">interaction</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span>
+                      <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;Treatment&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="p">],</span>
+                      <span class="n">missing</span><span class="o">=</span><span class="s1">&#39;drop&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interaction</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      0.0894      0.007     13.250      0.000       0.076       0.103
+Treatment     -0.0320      0.008     -4.116      0.000      -0.047      -0.017
+h              0.0141      0.008      1.806      0.071      -0.001       0.029
+==============================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>5| Write a code to get a contingency table below:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>firstname h</p></th>
+<th class="head"><p>0.0</p></th>
+<th class="head"><p>1.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Aisha</p></td>
+<td><p>0.010000</p></td>
+<td><p>0.037500</p></td>
+</tr>
+<tr class="row-odd"><td><p>Allison</p></td>
+<td><p>0.121739</p></td>
+<td><p>0.068376</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>Inside the table are the callback rates broken by Curriculum Vitae quality.
+What is the callback rate for Kristen and Lakisha? Why the rates are so different? Could we justify the rate difference, arguing that one is more educated and qualified than other?</p>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>Bertrand, Marianne, and Sendhil Mullainathan. (2004). Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination. American Economic Review, 94 (4): 991-1013. <a class="reference external" href="https://github.com/causal-methods/Papers/raw/master/Are%20Emily%20and%20Greg%20More%20Employable%20than%20Lakisha%20and%20Jamal.pdf">Click to download the paper</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "causal-methods/Book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="1)_Are_Chess_Players_more_Rational_than_the_Rest_of_the_Population.html" title="previous page">1) Are Chess Players More Rational than the Rest of the Population?</a>
+    <a class='right-next' id="next-link" href="3)_Are_Females_More_Likely_to_Complete_High_School_Under_Islamic_or_Secular_Regime.html" title="next page">3) Are Females More Likely to Complete High School Under Islamic or Secular Regime?</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vitor Kamada<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-174984323-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

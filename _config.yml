@@ -1,0 +1,21 @@
+# Book settings
+title: Causal Inference with Python
+author: Vitor Kamada
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/causal-methods/Book
+
+# Configure your Binder links, such as the URL of the BinderHub.
+launch_buttons:
+  binderhub_url             : https://mybinder.org
+  colab_url: "https://colab.research.google.com"
+  thebe                  : true
+  
+html:
+  google_analytics_id: UA-174984323-1  
