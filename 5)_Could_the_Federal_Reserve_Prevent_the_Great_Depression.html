@@ -215,10 +215,10 @@
                 
   <div class="section" id="could-the-federal-reserve-prevent-the-great-depression">
 <h1>5) Could the Federal Reserve Prevent the Great Depression?<a class="headerlink" href="#could-the-federal-reserve-prevent-the-great-depression" title="Permalink to this headline">¶</a></h1>
-<p>Vitor Kamada</p>
+<p><a class="reference external" href="https://www.linkedin.com/in/vitor-kamada-1b73a078">Vitor Kamada</a></p>
 <p>E-mail: econometrics.methods&#64;gmail.com</p>
 <p>Last updated: 8-14-2020</p>
-<p>Concerned the Great Depression, neoclassical economists tend to believe that the decline of economic activity led to bank failures. Keynes (1936) believed the opposite, that is, the bank insolvencies led to business failures.</p>
+<p>Concerned the Great Depression, neoclassical economists believe that the decline of economic activity “caused” the bank failures. Keynes (1936) believed the opposite, that is, the bank insolvencies led to business failures.</p>
 <p>Richardson &amp; Troost (2009) noticed that during the Great Depression, the state of Mississippi was divided into two districts controlled by different branches of Federal Reserve (Fed): St. Louis and Atlanta.</p>
 <p>Differently from the St. Louis Fed that made more onerous to borrow money, the Atlanta Fed adopted a Keynesian policy of discount lending and emergency liquidity to illiquid banks.</p>
 <p>Let’s open the data from Ziebarth (2013). Each row is a firm from the Census of Manufactures (CoM) for 1929, 1931, 1933, and 1935.</p>
@@ -779,6 +779,7 @@ sample is restricted to firms with 1 product.  Therefore, Atlanta district is a 
 <p>5 rows × 536 columns</p>
 </div></div></div>
 </div>
+<p>Let’s explain the advantages of panel data over the cross-sectional data. The last is a snapshot of one point or period of time; whereas in a panel data, the same unit of analysis is observed over time.</p>
 <p>Let <span class="math notranslate nohighlight">\(Y_{it}\)</span> the outcome variable of unit <span class="math notranslate nohighlight">\(i\)</span> on time <span class="math notranslate nohighlight">\(t\)</span>. The dummy variable <span class="math notranslate nohighlight">\(d2_{it}\)</span> is 1 for the second period, and 0 for the first period. Note that the explanatory variable <span class="math notranslate nohighlight">\(X_{it}\)</span> varies over unit <span class="math notranslate nohighlight">\(i\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>, but the unobserved factor <span class="math notranslate nohighlight">\(\alpha_i\)</span> doesn’t vary over the time. Unobserved factor is an unavailable variable (data) that might be correlated with the variable of interest, generating bias in the results.</p>
 <div class="math notranslate nohighlight">
 \[Y_{it}=\beta_0+\delta_0d2_{it}+\beta_1X_{it}+\alpha_i+\epsilon_{it}\]</div>
@@ -806,13 +807,13 @@ sample is restricted to firms with 1 product.  Therefore, Atlanta district is a 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: linearmodels in c:\users\acer\anaconda3\envs\book\lib\site-packages (4.17)
-Requirement already satisfied: Cython&gt;=0.29.14 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.29.21)
 Requirement already satisfied: scipy&gt;=1 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.4.1)
-Requirement already satisfied: patsy in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.5.1)
-Requirement already satisfied: numpy&gt;=1.15 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.18.1)
-Requirement already satisfied: property-cached&gt;=1.6.3 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.6.4)
 Requirement already satisfied: statsmodels&gt;=0.9 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.11.0)
+Requirement already satisfied: Cython&gt;=0.29.14 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.29.21)
+Requirement already satisfied: property-cached&gt;=1.6.3 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.6.4)
+Requirement already satisfied: patsy in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.5.1)
 Requirement already satisfied: mypy-extensions&gt;=0.4 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (0.4.3)
+Requirement already satisfied: numpy&gt;=1.15 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.18.1)
 Requirement already satisfied: pandas&gt;=0.23 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from linearmodels) (1.0.3)
 Requirement already satisfied: six in c:\users\acer\anaconda3\envs\book\lib\site-packages (from patsy-&gt;linearmodels) (1.14.0)
 Requirement already satisfied: python-dateutil&gt;=2.6.1 in c:\users\acer\anaconda3\envs\book\lib\site-packages (from pandas&gt;=0.23-&gt;linearmodels) (2.8.1)
@@ -834,8 +835,18 @@ Requirement already satisfied: pytz&gt;=2017.2 in c:\users\acer\anaconda3\envs\b
 <p>Let’s show formally that the we must take the difference twice in the DID estimator <span class="math notranslate nohighlight">\(\delta_0\)</span>:</p>
 <p>If <span class="math notranslate nohighlight">\(d2=0\)</span> and <span class="math notranslate nohighlight">\(dT=0\)</span>, then <span class="math notranslate nohighlight">\(Y_{0,0}=\beta_0\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(d2=1\)</span> and <span class="math notranslate nohighlight">\(dT=0\)</span>, then <span class="math notranslate nohighlight">\(Y_{1,0}=\beta_0+\delta_0\)</span>.</p>
+<p>For the control group, the difference “After - Before” is:</p>
 <div class="math notranslate nohighlight">
-\[Y_{1,1}=Y_{1,0}-Y_{0,0}=\delta_0\]</div>
+\[Y_{1,0}-Y_{0,0}=\delta_0\]</div>
+<p>Let’s apply the same reasoning to the treatment group:</p>
+<p>If <span class="math notranslate nohighlight">\(d2=0\)</span> and <span class="math notranslate nohighlight">\(dT=1\)</span>, then <span class="math notranslate nohighlight">\(Y_{0,1}=\beta_0 + \beta_1\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(d2=1\)</span> and <span class="math notranslate nohighlight">\(dT=1\)</span>, then <span class="math notranslate nohighlight">\(Y_{1,1}=\beta_0+\delta_0+ \beta_1+\delta_1\)</span>.</p>
+<p>For the treatment group, the difference “After - Before” is:</p>
+<div class="math notranslate nohighlight">
+\[Y_{1,1}-Y_{0,1}=\delta_0+\delta_1\]</div>
+<p>Then, if we take the the difference “Treatment - Control”, we get:</p>
+<div class="math notranslate nohighlight">
+\[\delta_1\]</div>
 <p><img alt="alt text" src="https://github.com/causal-methods/Data/raw/master/figures/DiffDiff.PNG" /></p>
 <p>Let’s manually calculate the <span class="math notranslate nohighlight">\(\hat{\delta}_1\)</span> from the numbers in the graphic “Firm’s Revenue during the Great Depression”. Note that in the  Difference-in-Differences (DID) method, a counterfactual is constructed based on the control group (Atlanta). It is just a parallel shift of Atlanta line. The counterfactual is the hypothetical outcome for the treatment group (St. Louis), if St. Louis Fed had followed the same policy of Atlanta Fed.</p>
 <div class="math notranslate nohighlight">
@@ -912,20 +923,20 @@ Requirement already satisfied: pytz&gt;=2017.2 in c:\users\acer\anaconda3\envs\b
 </div><div class="output text_html"><div>
 
 
-            <div id="79dcafc9-3fdd-4f1b-ad2d-5afc6ff4b2bb" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="51f8a63b-eadc-45fe-90ba-63c9fb3bd5db" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("79dcafc9-3fdd-4f1b-ad2d-5afc6ff4b2bb")) {
+                if (document.getElementById("51f8a63b-eadc-45fe-90ba-63c9fb3bd5db")) {
                     Plotly.newPlot(
-                        '79dcafc9-3fdd-4f1b-ad2d-5afc6ff4b2bb',
+                        '51f8a63b-eadc-45fe-90ba-63c9fb3bd5db',
                         [{"name": "Atlanta (Control)", "type": "scatter", "x": [1929, 1931], "y": [10.780696868896484, 10.428585052490234]}, {"name": "St. Louis (Treatment)", "type": "scatter", "x": [1929, 1931], "y": [10.875168800354004, 10.323675155639648]}, {"line": {"dash": "dot"}, "name": "Counterfactual", "type": "scatter", "x": [1929, 1931], "y": [10.875168800354004, 10.523056983947754]}, {"line": {"dash": "dashdot"}, "name": "$\\delta_1=0.2$", "type": "scatter", "x": [1931, 1931], "y": [10.323675155639648, 10.523056983947754]}],
                         {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Firm's Revenue during the Great Depression"}, "xaxis": {"title": {"text": "Year"}, "type": "category"}, "yaxis": {"title": {"text": "Log(Revenue)"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('79dcafc9-3fdd-4f1b-ad2d-5afc6ff4b2bb');
+var gd = document.getElementById('51f8a63b-eadc-45fe-90ba-63c9fb3bd5db');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -979,8 +990,8 @@ if (outputEl) {{
 Dep. Variable:     log_total_output_value   R-squared:                        0.0257
 Estimator:                       PanelOLS   R-squared (Between):              0.0145
 No. Observations:                    1227   R-squared (Within):               0.2381
-Date:                    Wed, Aug 26 2020   R-squared (Overall):              0.0257
-Time:                            16:07:28   Log-likelihood                   -2135.5
+Date:                    Sat, Aug 29 2020   R-squared (Overall):              0.0257
+Time:                            22:37:23   Log-likelihood                   -2135.5
 Cov. Estimator:                 Clustered                                           
                                             F-statistic:                      10.761
 Entities:                             938   P-value                           0.0000
@@ -1035,7 +1046,6 @@ louis_1931      -0.1994     0.1237    -1.6112     0.1074     -0.4422      0.0434
 <p>We can write the equation above in a more compact way:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{Y}_{it}=\beta \ddot{X}_{it}+\ddot{\epsilon}_{it}\]</div>
-<p>The computer implements the Fixed Effects (FE) automatically with the command “entity_effects=True”.</p>
 <p>As we declared previously that the firm is the unit of analysis in this panel data set, the computer implements the Firm Fixed Effects (FE) automatically with the command “entity_effects=True”.</p>
 <p>We added Firm Fixed Effects (FE) to the Difference-in-Differences (DID) specification and the result didn’t change much. The intuition is that Difference-in-Differences (DID) technique had already mitigated the endogeneity problems.</p>
 <p>The St. Louis Fed policy decreased the firm revenue in 17% (<span class="math notranslate nohighlight">\(1-e^{-0.1862}\)</span>). The result is statistically significant at 10%.</p>
@@ -1052,8 +1062,8 @@ louis_1931      -0.1994     0.1237    -1.6112     0.1074     -0.4422      0.0434
 Dep. Variable:     log_total_output_value   R-squared:                        0.2649
 Estimator:                       PanelOLS   R-squared (Between):             -0.4554
 No. Observations:                    1227   R-squared (Within):               0.2649
-Date:                    Wed, Aug 26 2020   R-squared (Overall):             -0.4266
-Time:                            16:07:28   Log-likelihood                   -202.61
+Date:                    Sat, Aug 29 2020   R-squared (Overall):             -0.4266
+Time:                            22:37:23   Log-likelihood                   -202.61
 Cov. Estimator:                 Clustered                                           
                                             F-statistic:                      34.361
 Entities:                             938   P-value                           0.0000
@@ -1085,7 +1095,7 @@ Included effects: Entity
 </div>
 </div>
 </div>
-<p>The Fixed Effects (FE) can be manually implemented by adding dummy variables. Let’s add Industry Fixed Effects to the Difference-in-Differences (DID) specification to discard the possibility that the result might be driven by Industry specific shocks.</p>
+<p>The Fixed Effects (FE) can be manually implemented by adding dummy variables. There are different Fixed Effects. Let’s add Industry Fixed Effects to the Difference-in-Differences (DID) specification to discard the possibility that the results might be driven by Industry specific shocks.</p>
 <p>The St. Louis Fed policy decreased the firm revenue in 14.2% (<span class="math notranslate nohighlight">\(1-e^{-0.1533}\)</span>). The result is statistically significant at 10%.</p>
 <p>Why not add Firm and Industry Fixed Effects in the same time? It is possible and recommendable, but the computer will not return any result given the problem of multicollinearity. We have only two observations (2 years) per firm. If we add one dummy variable for each firm, it is like to run a regression with more variables than observations.</p>
 <p>In his paper Ziebarth (2013) presents results using Firm and Industry Fixed Effects, how is it possible? Ziebarth (2013) used Stata software. Stata automatically drops some variables in the case of multicollinearity problem and outputs a result. Although this practice is well-diffused in Top Journals of Economics, it is not the “true” Fixed Effects.</p>
@@ -1102,8 +1112,8 @@ Included effects: Entity
 Dep. Variable:     log_total_output_value   R-squared:                        0.5498
 Estimator:                       PanelOLS   R-squared (Between):              0.5462
 No. Observations:                    1227   R-squared (Within):               0.3913
-Date:                    Wed, Aug 26 2020   R-squared (Overall):              0.5498
-Time:                            16:07:28   Log-likelihood                   -1661.9
+Date:                    Sat, Aug 29 2020   R-squared (Overall):              0.5498
+Time:                            22:37:23   Log-likelihood                   -1661.9
 Cov. Estimator:                 Clustered                                           
                                             F-statistic:                      29.971
 Entities:                             938   P-value                           0.0000
@@ -1199,8 +1209,8 @@ industrycode.652      2.5495     0.2211     11.531     0.0000      2.1158      2
 Dep. Variable:     log_total_output_value   R-squared:                        0.3689
 Estimator:                  RandomEffects   R-squared (Between):             -0.0001
 No. Observations:                    1227   R-squared (Within):               0.0025
-Date:                    Wed, Aug 26 2020   R-squared (Overall):             -0.0027
-Time:                            16:07:28   Log-likelihood                   -1260.9
+Date:                    Sat, Aug 29 2020   R-squared (Overall):             -0.0027
+Time:                            22:37:23   Log-likelihood                   -1260.9
 Cov. Estimator:                 Clustered                                           
                                             F-statistic:                      716.04
 Entities:                             938   P-value                           0.0000
@@ -1220,6 +1230,9 @@ Max Obs:                           652.00
 const            10.518     0.0603     174.36     0.0000      10.399      10.636
 st_louis_fed     0.0721     0.0946     0.7623     0.4460     -0.1135      0.2577
 ================================================================================
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

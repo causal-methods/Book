@@ -215,7 +215,7 @@
                 
   <div class="section" id="are-females-more-likely-to-complete-high-school-under-islamic-or-secular-regime">
 <h1>3) Are Females More Likely to Complete High School Under Islamic or Secular Regime?<a class="headerlink" href="#are-females-more-likely-to-complete-high-school-under-islamic-or-secular-regime" title="Permalink to this headline">¶</a></h1>
-<p>Vitor Kamada</p>
+<p><a class="reference external" href="https://www.linkedin.com/in/vitor-kamada-1b73a078">Vitor Kamada</a></p>
 <p>E-mail: econometrics.methods&#64;gmail.com</p>
 <p>Last updated: 8-8-2020</p>
 <p>Let’s open the data from Meyersson (2014). Each row represents a municipality in Turkey.</p>
@@ -398,7 +398,7 @@
 <p>5 rows × 236 columns</p>
 </div></div></div>
 </div>
-<p>The variable ‘hischshr1520f’ is the proportion of female aged 15-20 that completed high  according to the 2000 census. Unfortunately, the age is aggregated. It is unlikely that 15 and 16 year old teenagers can finish high school in Turkey. It would be better to have the data broken by age. As the 15 and 16 year old cannot be removed from the analysis, the proportion of female aged 15-20 that completed high school is very low: 16.3%.</p>
+<p>The variable ‘hischshr1520f’ is the proportion of female aged 15-20 that completed high school according to the 2000 census. Unfortunately, the age is aggregated. It is unlikely that 15 and 16 year old teenagers can finish high school in Turkey. It would be better to have the data broken by age. As the 15 and 16 year old cannot be removed from the analysis, the proportion of female aged 15-20 that completed high school is very low: 16.3%.</p>
 <p>The variable ‘i94’ is 1 if an Islamic mayor won the municipality election in 1994, and 0 if a secular mayor won. The Islamic party governed 12% of the municipalities in Turkey.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,7 +504,7 @@
 </table>
 </div></div></div>
 </div>
-<p>The graphic “Naive Comparison” shows that control and treatment group is determined based on the variable ‘iwm94’: Islamic win margin. This variable was centralized to 0. Therefore, if win margin is above 0, the Islamic mayor won on the election. By the other hand, if win margin is below 0, the Islamic mayor lost the election.</p>
+<p>The graphic “Naive Comparison” shows that control group and treatment group are determined based on the variable ‘iwm94’: Islamic win margin. This variable was centralized to 0. Therefore, if win margin is above 0, the Islamic mayor won on the election. By the other hand, if win margin is below 0, the Islamic mayor lost the election.</p>
 <p>In terms of average high school attainment, the difference between treatment group (14%) and control group (16.6%) is -2.6%. The problem of comparing municipal outcomes using observational data is that the treatment group is not similar to the control group. Therefore, confound factors might bias the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,7 +676,7 @@ province           0.0357      0.010      3.499      0.000       0.016       0.0
 </div>
 </div>
 <p>The result of the multiple regression looks counter intuitive. How the sign of the treatment variable can change?</p>
-<p>Let’s look at data from other perspective. The graph “Naive Comparison” is the scatterplot of all municipalities individually. It is hard to see any pattern or trends.</p>
+<p>Let’s look at data from other perspective. The graph “Naive Comparison” is the scatterplot of all municipalities. Each dot is one municipality. It is hard to see any pattern or trends.</p>
 <p>Let’s plot the same graphic, but with municipalities aggregated in 29 bins based on similarity of the outcome variable high school completion. These bins are the blue balls in the graphic below. The size of the ball is proportional to the number of municipalities used to calculate the mean value of high school completion.</p>
 <p>If you look carefully near the cut-off (vertical red line), where the variable Islamic win margin = 0, you will see a discontinuity or a jump in the level of high school completion.</p>
 <div class="cell docutils container">

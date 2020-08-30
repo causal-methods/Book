@@ -215,9 +215,9 @@
                 
   <div class="section" id="does-a-white-sounding-name-help-to-get-a-job-interview">
 <h1>2) Does a White-Sounding Name Help to Get a Job Interview?<a class="headerlink" href="#does-a-white-sounding-name-help-to-get-a-job-interview" title="Permalink to this headline">¶</a></h1>
-<p>Vitor Kamada</p>
+<p><a class="reference external" href="https://www.linkedin.com/in/vitor-kamada-1b73a078">Vitor Kamada</a></p>
 <p>E-mail: econometrics.methods&#64;gmail.com</p>
-<p>Last updated: 8-8-2020</p>
+<p>Last updated: 8-27-2020</p>
 <p>Let’s load the dataset from Bertrand &amp; Mullainathan (2004).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -468,12 +468,15 @@
 </div>
 <p>Let’s calculate the number of observations (size) and the mean of the variable ‘call’ broken by race.</p>
 <p>We have the same quantity (2435) curriculum vitae (CVs) for Black and White applicants.</p>
-<p>Only 6.4% of Blacks received a callback; whereas 9.6% of Whites received a callback.</p>
+<p>Only 6.4% of Blacks received a callback; whereas 9.7% of Whites received a callback.</p>
 <p>Therefore, White applicants are about 50% more likely to receive a callback for interview.</p>
 <p>In other words, for each 10 CVs that White applicants send to get 1 job interview, Black applicants need to send 15 CVs to get the same outcome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Round 2 decimals</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">callback</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -518,23 +521,23 @@
     <tr>
       <th>b</th>
       <td>2435.0</td>
-      <td>0.064476</td>
+      <td>0.0645</td>
     </tr>
     <tr>
       <th>w</th>
       <td>2435.0</td>
-      <td>0.096509</td>
+      <td>0.0965</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Somebody might argue that this difference of 3.2% (9.6 - 6.4) does not necessary implies discrimination against Blacks.</p>
+<p>Somebody might argue that this difference of 3.2% (9.65 - 6.45) does not necessary implies discrimination against Blacks.</p>
 <p>You could argue that White applicants receives more callbacks, because they have more education, experience, skills, and not because of the skin color.</p>
 <p>Specifically, you could argue that White applicant is more likely to receive a callback, because they are more likely to have a college degree (signal of qualifications) than Blacks.</p>
 <p>If you extract a random sample of US population or check data from US Census, you will see that Blacks are less likely to have a college degree than Whites. This is an undisputable fact.</p>
 <p>Let’s check the proportion of Blacks and Whites with college degree in the dataset from Bertrand &amp; Mullainathan (2004)</p>
-<p>Originally, college graduate was coded as 4 in the variable ‘education’. 3 = some college. 2 = high school graduate. 1 = some high school. 0 not reported.</p>
+<p>Originally, college graduate was coded as 4 in the variable ‘education’, 3 = some college, 2 = high school graduate, 1 = some high school, and 0 not reported.</p>
 <p>Let’s create the variable ‘college’ = 1, if a person completes a college degree; and 0 otherwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,8 +546,8 @@
 </div>
 </div>
 </div>
-<p>We can see that 72.2% of Black Applicants have a college degree. The proportion of Whites with college degree is very similar 71.6%.</p>
-<p>Why these numbers are not representative of US population and the values closer to each other?</p>
+<p>We can see that 72.3% of Black Applicants have a college degree. The proportion of Whites with college degree is very similar 71.6%.</p>
+<p>Why these numbers are not representative of US population and the values are closer to each other?</p>
 <p>Because the data is not a random sample extraction from reality.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -593,12 +596,12 @@
     <tr>
       <th>b</th>
       <td>2435</td>
-      <td>0.722793</td>
+      <td>0.7228</td>
     </tr>
     <tr>
       <th>w</th>
       <td>2435</td>
-      <td>0.716222</td>
+      <td>0.7162</td>
     </tr>
   </tbody>
 </table>
@@ -606,7 +609,7 @@
 </div>
 <p>Bertrand &amp; Mullainathan (2004) produced experimental data. They created the CVs. They randomly assigned a Black sounding name (ex: Lakish or Jamal) to half of the CVs and a White sounding name (ex: Emily or Greg) to the other half.</p>
 <p>Randomization of the race via name makes the two categories White and Black equal (very similar) to each other for all observable and non-observable factors.</p>
-<p>Let’s check this statement for other factors in the CVs. The names of the variables are self-explanatory, and more information can be obtained reading the paper from Bertrand &amp; Mullainathan (2004).</p>
+<p>Let’s check this statement for other factors in the CVs. The names of the variables are self-explanatory, and more information can be obtained reading the paper: Bertrand &amp; Mullainathan (2004).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resume</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsexp&#39;</span><span class="p">,</span> <span class="s1">&#39;volunteer&#39;</span><span class="p">,</span> <span class="s1">&#39;military&#39;</span><span class="p">,</span>
@@ -713,8 +716,8 @@
 </div></div></div>
 </div>
 <p>Let’s use a different code to calculate the mean of the variables for the whole sample (both Whites and Blacks) and broken samples between Blacks and Whites.</p>
-<p>See that the average years of experience (yearsexp) is 7.84 for the whole sample, 7.82 for Blacks, and 7.85 for Whites.</p>
-<p>If you check all variables the mean values for Blacks are very closer to the mean values for Whites. This is the consequence of randomization.</p>
+<p>See that the average years of experience (yearsexp) is 7.84 for the whole sample, 7.83 for Blacks, and 7.86 for Whites.</p>
+<p>If you check all variables, the mean values for Blacks are very closer to the mean values for Whites. This is the consequence of randomization.</p>
 <p>We also calculate the standard deviation (std), a measure of variation around the mean. Note that the standard deviation is pretty much the same between the whole sample and split samples. Like the mean, you don’t suppose to see much difference among standard deviations in the case of experimental data.</p>
 <p>The standard deviation of the variable years of experience is 5 years. We can state roughly the most part of observations (about 68%) is between 1 std below the mean and 1 std above the mean, that is, between [2.84, 12.84].</p>
 <div class="cell docutils container">
@@ -758,84 +761,84 @@
   <tbody>
     <tr>
       <th>college</th>
-      <td>0.719507</td>
-      <td>0.449286</td>
-      <td>0.722793</td>
-      <td>0.447712</td>
-      <td>0.716222</td>
-      <td>0.450923</td>
+      <td>0.7195</td>
+      <td>0.4493</td>
+      <td>0.7228</td>
+      <td>0.4477</td>
+      <td>0.7162</td>
+      <td>0.4509</td>
     </tr>
     <tr>
       <th>yearsexp</th>
-      <td>7.842916</td>
-      <td>5.044612</td>
-      <td>7.829569</td>
-      <td>5.010764</td>
-      <td>7.856263</td>
-      <td>5.079228</td>
+      <td>7.8429</td>
+      <td>5.0446</td>
+      <td>7.8296</td>
+      <td>5.0108</td>
+      <td>7.8563</td>
+      <td>5.0792</td>
     </tr>
     <tr>
       <th>volunteer</th>
-      <td>0.411499</td>
-      <td>0.492156</td>
-      <td>0.414374</td>
-      <td>0.492715</td>
-      <td>0.408624</td>
-      <td>0.491681</td>
+      <td>0.4115</td>
+      <td>0.4922</td>
+      <td>0.4144</td>
+      <td>0.4927</td>
+      <td>0.4086</td>
+      <td>0.4917</td>
     </tr>
     <tr>
       <th>military</th>
-      <td>0.097125</td>
-      <td>0.296159</td>
-      <td>0.101848</td>
-      <td>0.302511</td>
-      <td>0.092402</td>
-      <td>0.289653</td>
+      <td>0.0971</td>
+      <td>0.2962</td>
+      <td>0.1018</td>
+      <td>0.3025</td>
+      <td>0.0924</td>
+      <td>0.2897</td>
     </tr>
     <tr>
       <th>email</th>
-      <td>0.479261</td>
-      <td>0.499621</td>
-      <td>0.479671</td>
-      <td>0.499689</td>
-      <td>0.478850</td>
-      <td>0.499655</td>
+      <td>0.4793</td>
+      <td>0.4996</td>
+      <td>0.4797</td>
+      <td>0.4997</td>
+      <td>0.4789</td>
+      <td>0.4997</td>
     </tr>
     <tr>
       <th>workinschool</th>
-      <td>0.559548</td>
-      <td>0.496492</td>
-      <td>0.560986</td>
-      <td>0.496369</td>
-      <td>0.558111</td>
-      <td>0.496714</td>
+      <td>0.5595</td>
+      <td>0.4965</td>
+      <td>0.5610</td>
+      <td>0.4964</td>
+      <td>0.5581</td>
+      <td>0.4967</td>
     </tr>
     <tr>
       <th>honors</th>
-      <td>0.052772</td>
-      <td>0.223601</td>
-      <td>0.051335</td>
-      <td>0.220725</td>
-      <td>0.054209</td>
-      <td>0.226477</td>
+      <td>0.0528</td>
+      <td>0.2236</td>
+      <td>0.0513</td>
+      <td>0.2207</td>
+      <td>0.0542</td>
+      <td>0.2265</td>
     </tr>
     <tr>
       <th>computerskills</th>
-      <td>0.820534</td>
-      <td>0.383782</td>
-      <td>0.832444</td>
-      <td>0.373549</td>
-      <td>0.808624</td>
-      <td>0.393465</td>
+      <td>0.8205</td>
+      <td>0.3838</td>
+      <td>0.8324</td>
+      <td>0.3735</td>
+      <td>0.8086</td>
+      <td>0.3935</td>
     </tr>
     <tr>
       <th>specialskills</th>
-      <td>0.328747</td>
-      <td>0.469806</td>
-      <td>0.327310</td>
-      <td>0.469328</td>
-      <td>0.330185</td>
-      <td>0.470376</td>
+      <td>0.3287</td>
+      <td>0.4698</td>
+      <td>0.3273</td>
+      <td>0.4693</td>
+      <td>0.3302</td>
+      <td>0.4704</td>
     </tr>
   </tbody>
 </table>
@@ -847,18 +850,18 @@
 <p>In an experiment, only the treatment variable (race) is exogenously manipulated. Everything else is kept constant, consequently variations in the outcome variable (callbacks) can only be attribute to the variations in the treatment variable (race).</p>
 <p>Therefore, experimental study eliminates all confound factors presented in observational studies.</p>
 <p>Experiment is the gold standard in Hard Science. The most rigorous way to claim causality.</p>
-<p>Surveys, census, observational data direct extracted from reality cannot be used to establish causality. It might useful to capture association, but not causation.</p>
+<p>Surveys, census, observational data direct extracted from reality cannot be used to establish causality. It might be useful to capture association, but not causation.</p>
 <p>Formally, we can write a causal model below. The 3 lines are equivalent. We can claim that <span class="math notranslate nohighlight">\(\beta\)</span> has “causal” interpretation, only if the treatment variables (<span class="math notranslate nohighlight">\(T\)</span>) was randomized. In the absence of randomization, <span class="math notranslate nohighlight">\(\beta\)</span> captures only correlation.</p>
 <div class="math notranslate nohighlight">
 \[Outcome = Intercept + Slope*Treatment + Error\]</div>
 <div class="math notranslate nohighlight">
-\[y=Intercept+\beta T +\epsilon\]</div>
+\[Y=\alpha+\beta T +\epsilon\]</div>
 <div class="math notranslate nohighlight">
-\[callbacks = Intercept+\beta race+\epsilon\]</div>
+\[callbacks = \alpha+\beta race+\epsilon\]</div>
 <p>Let’s estimate the model above, using the ordinary least square (OLS) method.</p>
 <p>In the stasmodels library of Python, the intercept is a constant with value of 1.</p>
 <p>Let’s create the variable ‘treatment’: 1 = Black applicant, and 0 = White applicant.</p>
-<p>The variable ‘call’ is the outcome variable (y).</p>
+<p>The variable ‘call’ is the outcome variable (Y).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -938,19 +941,19 @@ Treatment     -0.0320      0.008     -4.115      0.000      -0.047      -0.017
     <tr>
       <th>b</th>
       <td>2435.0</td>
-      <td>0.064476</td>
+      <td>0.0645</td>
     </tr>
     <tr>
       <th>w</th>
       <td>2435.0</td>
-      <td>0.096509</td>
+      <td>0.0965</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>See that the value of Intercept is 9.6%. This is the proportion of White applicants that received a callback for interview.</p>
-<p>The coefficient of the treatment variable is 3.2%. The interpretation is that being a Black apllicant “causes” to receive -3.2% ( 6.4% - 9.6%) less callbacks for interview.</p>
+<p>See that the value of Intercept is 9.65%. This is the proportion of White applicants that received a callback for interview.</p>
+<p>The coefficient of the treatment variable is 3.2%. The interpretation is that being a Black apllicant “causes” to receive -3.2% ( 6.45% - 9.65%) less callbacks for interview.</p>
 <p>Remember that 3.2% is a big magnitude, as it represents about 50% differential. In practical terms, Black applicants has to send 15 CVs to secure one interview rather than 10 CVs for White applicants.</p>
 <p>The coefficient of the treatment variable is also statistically significant at level of significance (<span class="math notranslate nohighlight">\(\alpha\)</span> = 1%).</p>
 <p>The t-value of -4.115 is the ratio:</p>
@@ -969,7 +972,7 @@ Treatment     -0.0320      0.008     -4.115      0.000      -0.047      -0.017
 <p>Note that in observational studies, you must always control for other factors. Otherwise, you will have the omitted variable bias problem.</p>
 <p>Let’s estimate the multiple regression below:</p>
 <div class="math notranslate nohighlight">
-\[y=Intercept+\beta T + Other\ Factors+\epsilon\]</div>
+\[y=\alpha+\beta T + Other\ Factors+\epsilon\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">other_factors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsexp&#39;</span><span class="p">,</span> <span class="s1">&#39;volunteer&#39;</span><span class="p">,</span> <span class="s1">&#39;military&#39;</span><span class="p">,</span>
@@ -1012,7 +1015,7 @@ specialskills      0.0634      0.009      7.376      0.000       0.047       0.0
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<p>1| In the literature of racial discrimination, there are more than 1000 observational studies for each experimental study. Suppose you read 100 observational studies that indicate that racial discrimination is real. Suppose that you also read 1 experimental study that claims no evidence of racial discrimination. Are you more inclined to accept the result of 100 observational studies or the result of the experimental study? Justify your answer.</p>
+<p>1| In the literature of racial discrimination, there are more than 1000 observational studies for each experimental study. Suppose you read 100 observational studies that indicate that racial discrimination is real. Suppose that you also read 1 experimental study that claims no evidence of racial discrimination. Are you more inclined to accept the result of 100 observational studies or the result of one experimental study? Justify your answer.</p>
 <p>2| Interpret the 4 values of the contingency table below. Specifically, state the meaning and compare the values.</p>
 <p>The variable ‘h’: 1 = higher quality curriculum vitae; 0 = lower quality curriculum vitae. This variable was randomized.</p>
 <p>Other variables were previously defined.</p>
@@ -1055,13 +1058,13 @@ specialskills      0.0634      0.009      7.376      0.000       0.047       0.0
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.084983</td>
-      <td>0.107931</td>
+      <td>0.0850</td>
+      <td>0.1079</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.061881</td>
-      <td>0.067048</td>
+      <td>0.0619</td>
+      <td>0.0670</td>
     </tr>
   </tbody>
 </table>
