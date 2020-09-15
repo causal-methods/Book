@@ -98,6 +98,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="6)_The_Premium_of_Having_a_White_Female_Name_in_the_Canadian_Job_Market_During_the_Great_Recession_2007_2009.html">
+   6) The Premium of Having a White Female Name in the Canadian Job Market During the Great Recession 2007-2009
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Bibliography.html">
    Bibliography
   </a>
@@ -217,7 +222,7 @@
 <h1>2) Does a White-Sounding Name Help to Get a Job Interview?<a class="headerlink" href="#does-a-white-sounding-name-help-to-get-a-job-interview" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://www.linkedin.com/in/vitor-kamada-1b73a078">Vitor Kamada</a></p>
 <p>E-mail: econometrics.methods&#64;gmail.com</p>
-<p>Last updated: 8-27-2020</p>
+<p>Last updated: 9-15-2020</p>
 <p>Let’s load the dataset from Bertrand &amp; Mullainathan (2004).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +541,7 @@
 <p>You could argue that White applicants receives more callbacks, because they have more education, experience, skills, and not because of the skin color.</p>
 <p>Specifically, you could argue that White applicant is more likely to receive a callback, because they are more likely to have a college degree (signal of qualifications) than Blacks.</p>
 <p>If you extract a random sample of US population or check data from US Census, you will see that Blacks are less likely to have a college degree than Whites. This is an undisputable fact.</p>
-<p>Let’s check the proportion of Blacks and Whites with college degree in the dataset from Bertrand &amp; Mullainathan (2004)</p>
+<p>Let’s check the proportion of Blacks and Whites with college degree in the dataset from Bertrand &amp; Mullainathan (2004).</p>
 <p>Originally, college graduate was coded as 4 in the variable ‘education’, 3 = some college, 2 = high school graduate, 1 = some high school, and 0 not reported.</p>
 <p>Let’s create the variable ‘college’ = 1, if a person completes a college degree; and 0 otherwise.</p>
 <div class="cell docutils container">
@@ -1016,7 +1021,8 @@ specialskills      0.0634      0.009      7.376      0.000       0.047       0.0
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <p>1| In the literature of racial discrimination, there are more than 1000 observational studies for each experimental study. Suppose you read 100 observational studies that indicate that racial discrimination is real. Suppose that you also read 1 experimental study that claims no evidence of racial discrimination. Are you more inclined to accept the result of 100 observational studies or the result of one experimental study? Justify your answer.</p>
-<p>2| Interpret the 4 values of the contingency table below. Specifically, state the meaning and compare the values.</p>
+<p>2| When the difference in group means is biased and not capture the average causal effect? Justify your answer, using math equations.</p>
+<p>3| Interpret the 4 values of the contingency table below. Specifically, state the meaning and compare the values.</p>
 <p>The variable ‘h’: 1 = higher quality curriculum vitae; 0 = lower quality curriculum vitae. This variable was randomized.</p>
 <p>Other variables were previously defined.</p>
 <div class="cell docutils container">
@@ -1070,7 +1076,7 @@ specialskills      0.0634      0.009      7.376      0.000       0.047       0.0
 </table>
 </div></div></div>
 </div>
-<p>3| I created an interaction variable ‘h_Treatment’ that is the pairwise multiplication of the variable ‘h’ and ‘treatment’.</p>
+<p>4| I created an interaction variable ‘h_Treatment’ that is the pairwise multiplication of the variable ‘h’ and ‘treatment’.</p>
 <p>How can you use the coefficients of the regression below to get the values of the contingency table in exercise 2? Show the calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1095,7 +1101,7 @@ h_Treatment    -0.0178      0.016     -1.142      0.253      -0.048       0.013
 </div>
 </div>
 </div>
-<p>4| I run the regression below without the interaction term ‘h_Treatment’. Could I use the coefficients below to get the values of the contingency table in exercise 2?  If yes, show the exact calculations.</p>
+<p>5| I run the regression below without the interaction term ‘h_Treatment’. Could I use the coefficients below to get the values of the contingency table in exercise 2?  If yes, show the exact calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">interaction</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span>
@@ -1117,7 +1123,7 @@ h              0.0141      0.008      1.806      0.071      -0.001       0.029
 </div>
 </div>
 </div>
-<p>5| Write a code to get a contingency table below:</p>
+<p>6| Write a code to get a contingency table below:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>firstname h</p></th>
@@ -1142,6 +1148,8 @@ h              0.0141      0.008      1.806      0.071      -0.001       0.029
 </table>
 <p>Inside the table are the callback rates broken by Curriculum Vitae quality.
 What is the callback rate for Kristen and Lakisha? Why the rates are so different? Could we justify the rate difference, arguing that one is more educated and qualified than other?</p>
+<p>7| Use the data from Bertrand &amp; Mullainathan (2004) to test if Whites and Blacks have the same average years of experience. State the null hypothesis. Write the mathematical formula of the test. Interpret the result.</p>
+<p>8| Think outside of the box like Bertrand &amp; Mullainathan (2004). Propose a practical way to figure out if blue eyes and blond hair cause higher salary. Be specific on how to implement a randomization strategy in practice.</p>
 </div>
 <div class="section" id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
