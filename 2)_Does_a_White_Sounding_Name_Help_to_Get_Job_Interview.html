@@ -1077,7 +1077,7 @@ specialskills      0.0634      0.009      7.376      0.000       0.047       0.0
 </div></div></div>
 </div>
 <p>4| I created an interaction variable ‘h_Treatment’ that is the pairwise multiplication of the variable ‘h’ and ‘treatment’.</p>
-<p>How can you use the coefficients of the regression below to get the values of the contingency table in exercise 2? Show the calculations.</p>
+<p>How can you use the coefficients of the regression below to get the values of the contingency table in exercise 3? Show the calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;h_Treatment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Treatment&#39;</span><span class="p">]</span>
@@ -1101,7 +1101,7 @@ h_Treatment    -0.0178      0.016     -1.142      0.253      -0.048       0.013
 </div>
 </div>
 </div>
-<p>5| I run the regression below without the interaction term ‘h_Treatment’. Could I use the coefficients below to get the values of the contingency table in exercise 2?  If yes, show the exact calculations.</p>
+<p>5| I run the regression below without the interaction term ‘h_Treatment’. Could I use the coefficients below to get the values of the contingency table in exercise 3?  If yes, show the exact calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">interaction</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">],</span>
