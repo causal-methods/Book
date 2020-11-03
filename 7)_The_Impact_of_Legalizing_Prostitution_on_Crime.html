@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7) The Impact of Legalizing Prostitution on Crime &#8212; Causal Inference with Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8) Do Hosts Discriminate against Black Guests in Airbnb?" href="8%29_Do_Hosts_Discriminate_against_Black_Guests_in_Airbnb.html" />
+    <link rel="prev" title="6) The Premium of Having a White Female Name in the Canadian Job Market During the Great Recession 2007-2009" href="6%29_The_Premium_of_Having_a_White_Female_Name_in_the_Canadian_Job_Market_During_the_Great_Recession_2007_2009.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Causal Inference with Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Causal Inference with Python
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%29_Are_Chess_Players_More_Rational_than_the_Rest_of_the_Population.html">
+   1) Are Chess Players More Rational than the Rest of the Population?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%29_Does_a_White_Sounding_Name_Help_to_Get_Job_Interview.html">
+   2) Does a White-Sounding Name Help to Get a Job Interview?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%29_Are_Females_More_Likely_to_Complete_High_School_Under_Islamic_or_Secular_Regime.html">
+   3) Are Females More Likely to Complete High School Under Islamic or Secular Regime?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%29_Do_Protestants_Prefer_Less_Leisure_than_Catholics.html">
+   4) Do Protestants Prefer Less Leisure than Catholics?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%29_Could_the_Federal_Reserve_Prevent_the_Great_Depression.html">
+   5) Could the Federal Reserve Prevent the Great Depression?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%29_The_Premium_of_Having_a_White_Female_Name_in_the_Canadian_Job_Market_During_the_Great_Recession_2007_2009.html">
+   6) The Premium of Having a White Female Name in the Canadian Job Market During the Great Recession 2007-2009
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7) The Impact of Legalizing Prostitution on Crime
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%29_Do_Hosts_Discriminate_against_Black_Guests_in_Airbnb.html">
+   8) Do Hosts Discriminate against Black Guests in Airbnb?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/7)_The_Impact_of_Legalizing_Prostitution_on_Crime.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/causal-methods/Book/master?urlpath=tree/7)_The_Impact_of_Legalizing_Prostitution_on_Crime.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/causal-methods/Book/blob/master/7)_The_Impact_of_Legalizing_Prostitution_on_Crime.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-impact-of-legalizing-prostitution-on-crime">
+<h1>7) The Impact of Legalizing Prostitution on Crime<a class="headerlink" href="#the-impact-of-legalizing-prostitution-on-crime" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.linkedin.com/in/vitor-kamada-1b73a078">Vitor Kamada</a></p>
+<p>E-mail: econometrics.methods&#64;gmail.com</p>
+<p>Last updated: 11-2-2020</p>
+<p>In the Netherlands, there are legal prostitution zones that in Dutch is called tippelzones. Bisschop et al. (2017) reported that the opening of a tippelzone reduces sexual abuse and rape by about 30-40%.</p>
+<p>Let’s open the dataset of Bisschop et al. (2017). Each row is a city in the Netherlands. The same city is observed between 1994–2011.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Data from Bisschop et al. (2017)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/causal-methods/Data/raw/master/&quot;</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;CBSregist2015.dta&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>city</th>
+      <th>year</th>
+      <th>opening</th>
+      <th>closing</th>
+      <th>city1</th>
+      <th>logpopdens</th>
+      <th>openingReg</th>
+      <th>mayorCDA</th>
+      <th>mayorCU</th>
+      <th>mayorD66</th>
+      <th>...</th>
+      <th>simtheftpcN</th>
+      <th>aggtheftpcN</th>
+      <th>lnsimtheftN</th>
+      <th>lnaggtheftN</th>
+      <th>theftpcN</th>
+      <th>lntheftN</th>
+      <th>pordoffpcN</th>
+      <th>pordviolpcN</th>
+      <th>lnpordoffN</th>
+      <th>lnpordviolN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amsterdam</td>
+      <td>1994-01-01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>8.381</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>59.246</td>
+      <td>57.934</td>
+      <td>8.364</td>
+      <td>8.342</td>
+      <td>117.181</td>
+      <td>9.046</td>
+      <td>7.596</td>
+      <td>5.110</td>
+      <td>6.310</td>
+      <td>5.914</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Amsterdam</td>
+      <td>1995-01-01</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>8.379</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>50.815</td>
+      <td>43.823</td>
+      <td>8.208</td>
+      <td>8.060</td>
+      <td>94.637</td>
+      <td>8.830</td>
+      <td>7.061</td>
+      <td>4.361</td>
+      <td>6.234</td>
+      <td>5.753</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Amsterdam</td>
+      <td>1996-01-01</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>8.373</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>42.333</td>
+      <td>37.111</td>
+      <td>8.020</td>
+      <td>7.888</td>
+      <td>79.444</td>
+      <td>8.649</td>
+      <td>7.520</td>
+      <td>5.431</td>
+      <td>6.292</td>
+      <td>5.966</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amsterdam</td>
+      <td>1997-01-01</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>8.369</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>46.843</td>
+      <td>32.860</td>
+      <td>8.117</td>
+      <td>7.762</td>
+      <td>79.704</td>
+      <td>8.648</td>
+      <td>6.852</td>
+      <td>4.195</td>
+      <td>6.194</td>
+      <td>5.704</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Amsterdam</td>
+      <td>1998-01-01</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>8.373</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>45.255</td>
+      <td>33.907</td>
+      <td>8.086</td>
+      <td>7.798</td>
+      <td>79.162</td>
+      <td>8.646</td>
+      <td>6.127</td>
+      <td>4.595</td>
+      <td>6.087</td>
+      <td>5.799</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 65 columns</p>
+</div></div></div>
+</div>
+<p>Let’s break the cities into 3 groups. Big cities and medium cities had a tippelzone in at least one year, whereas the other cities in the sample hadn’t a tippelzone.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">big_cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Amsterdam&quot;</span><span class="p">,</span> <span class="s2">&quot;Rotterdam&quot;</span><span class="p">,</span> <span class="s2">&quot;Den Haag&quot;</span><span class="p">]</span>
+<span class="n">medium_cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Utrecht&quot;</span><span class="p">,</span> <span class="s2">&quot;Nijmegen&quot;</span><span class="p">,</span> <span class="s2">&quot;Groningen&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;Heerlen&quot;</span><span class="p">,</span> <span class="s2">&quot;Eindhoven&quot;</span><span class="p">,</span> <span class="s2">&quot;Arnhem&quot;</span><span class="p">]</span>
+
+<span class="c1"># Classify cities</span>
+<span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">big_cities</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Big Cities&quot;</span>
+    <span class="k">elif</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">medium_cities</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Medium Cities&quot;</span>    
+    <span class="k">else</span><span class="p">:</span>   
+        <span class="k">return</span> <span class="s2">&quot;No tippelzone&quot;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">classify</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below are the annual crime reports per 10,000 inhabitants. Overall, big cities have higher crime rates. The exception is a drug-related crime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sexassaultpcN&#39;</span><span class="p">,</span> <span class="s1">&#39;rapepcN&#39;</span><span class="p">,</span> 
+	<span class="s1">&#39;drugspcN&#39;</span><span class="p">,</span> <span class="s1">&#39;maltreatpcN&#39;</span><span class="p">,</span> <span class="s1">&#39;weaponspcN&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">)[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>Big Cities</th>
+      <th>Medium Cities</th>
+      <th>No tippelzone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sexassaultpcN</th>
+      <td>0.775</td>
+      <td>0.626</td>
+      <td>0.664</td>
+    </tr>
+    <tr>
+      <th>rapepcN</th>
+      <td>1.032</td>
+      <td>0.846</td>
+      <td>0.691</td>
+    </tr>
+    <tr>
+      <th>drugspcN</th>
+      <td>14.921</td>
+      <td>15.599</td>
+      <td>12.779</td>
+    </tr>
+    <tr>
+      <th>maltreatpcN</th>
+      <td>21.259</td>
+      <td>18.665</td>
+      <td>17.864</td>
+    </tr>
+    <tr>
+      <th>weaponspcN</th>
+      <td>5.635</td>
+      <td>4.385</td>
+      <td>4.207</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Tippelzones cities are more populated and densely populated than cities without tippelzones. Average household income (“inkhh”) measured in 1,000 euros is similar in the 3 groups. Tippelzones cities also have individuals with a higher level of education. The proportion of immigrants is higher in big cities (11.4%). The share of social insurance benefits (“insurWWAO_pc”) is similar to the 3 groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demographics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;popul_100&#39;</span><span class="p">,</span> <span class="s1">&#39;pop_dens_100&#39;</span><span class="p">,</span> <span class="s1">&#39;popmale1565_100&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;inkhh&#39;</span><span class="p">,</span> <span class="s1">&#39;educhpc&#39;</span><span class="p">,</span> <span class="s1">&#39;nondutchpc&#39;</span><span class="p">,</span> <span class="s1">&#39;insurWWAO_pc&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">)[</span><span class="n">demographics</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>Big Cities</th>
+      <th>Medium Cities</th>
+      <th>No tippelzone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>popul_100</th>
+      <td>5974.886</td>
+      <td>1724.191</td>
+      <td>1131.138</td>
+    </tr>
+    <tr>
+      <th>pop_dens_100</th>
+      <td>43.258</td>
+      <td>22.977</td>
+      <td>19.560</td>
+    </tr>
+    <tr>
+      <th>popmale1565_100</th>
+      <td>2101.446</td>
+      <td>617.019</td>
+      <td>392.255</td>
+    </tr>
+    <tr>
+      <th>inkhh</th>
+      <td>29.052</td>
+      <td>28.989</td>
+      <td>30.502</td>
+    </tr>
+    <tr>
+      <th>educhpc</th>
+      <td>0.300</td>
+      <td>0.317</td>
+      <td>0.245</td>
+    </tr>
+    <tr>
+      <th>nondutchpc</th>
+      <td>0.114</td>
+      <td>0.059</td>
+      <td>0.052</td>
+    </tr>
+    <tr>
+      <th>insurWWAO_pc</th>
+      <td>0.074</td>
+      <td>0.081</td>
+      <td>0.078</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The Christian Union party has more mayors (31%) in cities without tippelzone. It is worth mentioning that this party opposes the opening of the tippelzone.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">political_party</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mayorSoc&#39;</span><span class="p">,</span> <span class="s1">&#39;mayorLib&#39;</span><span class="p">,</span> <span class="s1">&#39;mayorChr&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">)[</span><span class="n">political_party</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>Big Cities</th>
+      <th>Medium Cities</th>
+      <th>No tippelzone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mayorSoc</th>
+      <td>0.481</td>
+      <td>0.556</td>
+      <td>0.410</td>
+    </tr>
+    <tr>
+      <th>mayorLib</th>
+      <td>0.259</td>
+      <td>0.324</td>
+      <td>0.278</td>
+    </tr>
+    <tr>
+      <th>mayorChr</th>
+      <td>0.259</td>
+      <td>0.120</td>
+      <td>0.312</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The dataset is a balanced Panel Data. It is necessary to declare the indices in order: the unit of analysis and time unity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dyear&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+
+<span class="c1"># Set Panel Data</span>
+<span class="c1"># Set city as the unit of analysis</span>
+<span class="n">df25</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;city1&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(Y_{ct}\)</span> be the crime in city <span class="math notranslate nohighlight">\(c\)</span>
+in year <span class="math notranslate nohighlight">\(t\)</span>. Let <span class="math notranslate nohighlight">\(D_{ct}\)</span> = 1 if city <span class="math notranslate nohighlight">\(c\)</span> had an open tippelzone in year <span class="math notranslate nohighlight">\(t\)</span>; and 0 otherwise. Let’s estimate the following model:</p>
+<div class="math notranslate nohighlight">
+\[ln(Y_{ct})=\alpha_c+\rho D_{ct}+\beta X_{ct}+\gamma_t + \epsilon_{ct}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha_c\)</span> is the city fixed effects, <span class="math notranslate nohighlight">\(X_{ct}\)</span> is the vector of control variables, <span class="math notranslate nohighlight">\(\gamma_t\)</span> is the year fixed effects, and <span class="math notranslate nohighlight">\(\epsilon_{ct}\)</span> the usual error term.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="n">Ys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;lnsexassaultN&quot;</span><span class="p">,</span> <span class="s2">&quot;lnrapeN&quot;</span><span class="p">,</span> <span class="s2">&quot;lndrugsN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lnweaponsN&quot;</span><span class="p">,</span> <span class="s2">&quot;lnmaltreatN&quot;</span><span class="p">]</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;~ 1 + opening&quot;</span>
+<span class="n">fe</span> <span class="o">=</span> <span class="s2">&quot;+ C(city) + C(Dyear)&quot;</span>
+
+<span class="n">controls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;logpopmale1565&#39;</span><span class="p">,</span> <span class="s1">&#39;logpopdens&#39;</span><span class="p">,</span> <span class="s1">&#39;inkhh&#39;</span><span class="p">,</span> 
+	<span class="s1">&#39;educhpc&#39;</span><span class="p">,</span> <span class="s1">&#39;nondutchpc&#39;</span><span class="p">,</span> <span class="s1">&#39;insurWWAO&#39;</span><span class="p">,</span> <span class="s1">&#39;mayorCDA&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;mayorCU&#39;</span><span class="p">,</span> <span class="s1">&#39;mayorD66&#39;</span><span class="p">,</span> <span class="s1">&#39;mayorVVD&#39;</span><span class="p">]</span>
+
+<span class="n">Xs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">controls</span><span class="p">:</span>
+    <span class="n">Xs</span> <span class="o">=</span> <span class="n">Xs</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">var</span>
+
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">Y</span> <span class="ow">in</span> <span class="n">Ys</span><span class="p">:</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">Y</span> <span class="o">+</span> <span class="n">base</span> <span class="o">+</span> <span class="n">fe</span> <span class="o">+</span> <span class="n">Xs</span><span class="p">,</span> <span class="n">df25</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span>
+                <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span> <span class="n">df25</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]})</span>
+  <span class="n">columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\tools\_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Library to print professional publication</span>
+<span class="c1"># tables in Latex, HTML, etc.</span>
+<span class="o">!</span>pip install stargazer
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: stargazer in c:\anaconda\envs\textbook\lib\site-packages (0.0.5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Error parsing requirements for numpy: [Errno 2] No such file or directory: &#39;c:\\anaconda\\envs\\textbook\\lib\\site-packages\\numpy-1.19.2.dist-info\\METADATA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Column 1 indicates that an open tippelzone decreases sexual abuse by 26% (<span class="math notranslate nohighlight">\(e^{-0.302}-1\)</span>). In the other columns, the coefficients of tippelzone are not statistically significant. It looks that legalizing prostitution decreases sexual abuse, but not other crimes as rape, assault, illegal weapon, and drug-related.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settings for a nice table</span>
+<span class="kn">from</span> <span class="nn">stargazer.stargazer</span> <span class="kn">import</span> <span class="n">Stargazer</span>
+<span class="n">stargazer</span> <span class="o">=</span> <span class="n">Stargazer</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="n">stargazer</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;The Impact of Tippelzone on Crime&#39;</span><span class="p">)</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sex Abuse&#39;</span><span class="p">,</span> <span class="s1">&#39;Rape&#39;</span><span class="p">,</span> <span class="s1">&#39;Drugs&#39;</span><span class="p">,</span> <span class="s1">&#39;Weapons&#39;</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">]</span>
+<span class="n">stargazer</span><span class="o">.</span><span class="n">custom_columns</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">stargazer</span><span class="o">.</span><span class="n">covariate_order</span><span class="p">([</span><span class="s1">&#39;opening&#39;</span><span class="p">])</span>
+
+<span class="n">stargazer</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="s1">&#39;Covariates&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">])</span>
+
+<span class="n">stargazer</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="s1">&#39;City Fixed Effects&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">])</span>
+<span class="n">stargazer</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="s1">&#39;Year Fixed Effects&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">])</span>
+
+<span class="n">stargazer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\base\model.py:1752: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 52, but rank is 24
+  &#39;rank is %d&#39; % (J, J_), ValueWarning)
+C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\base\model.py:1752: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 52, but rank is 24
+  &#39;rank is %d&#39; % (J, J_), ValueWarning)
+C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\base\model.py:1752: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 52, but rank is 24
+  &#39;rank is %d&#39; % (J, J_), ValueWarning)
+C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\base\model.py:1752: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 52, but rank is 24
+  &#39;rank is %d&#39; % (J, J_), ValueWarning)
+C:\Anaconda\envs\textbook\lib\site-packages\statsmodels\base\model.py:1752: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 52, but rank is 24
+  &#39;rank is %d&#39; % (J, J_), ValueWarning)
+</pre></div>
+</div>
+<div class="output text_html">The Impact of Tippelzone on Crime<br><table style="text-align:center"><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><tr><td></td><td colspan="1">Sex Abuse</td><td colspan="1">Rape</td><td colspan="1">Drugs</td><td colspan="1">Weapons</td><td colspan="1">Assault</td></tr><tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td></tr><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">opening</td><td>-0.302<sup>***</sup></td><td>-0.042<sup></sup></td><td>-0.057<sup></sup></td><td>-0.074<sup></sup></td><td>-0.017<sup></sup></td></tr><tr><td style="text-align:left"></td><td>(0.091)</td><td>(0.060)</td><td>(0.076)</td><td>(0.093)</td><td>(0.060)</td></tr><tr><td style="text-align: left">Covariates</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td style="text-align: left">City Fixed Effects</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td style="text-align: left">Year Fixed Effects</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Observations</td><td>450</td><td>450</td><td>450</td><td>450</td><td>450</td></tr><tr><td style="text-align: left">R<sup>2</sup></td><td>0.727</td><td>0.794</td><td>0.899</td><td>0.907</td><td>0.957</td></tr><tr><td style="text-align: left">Adjusted R<sup>2</sup></td><td>0.692</td><td>0.767</td><td>0.886</td><td>0.895</td><td>0.952</td></tr><tr><td style="text-align: left">Residual Std. Error</td><td>0.485 (df=397)</td><td>0.449 (df=397)</td><td>0.330 (df=397)</td><td>0.289 (df=397)</td><td>0.165 (df=397)</td></tr><tr><td style="text-align: left">F Statistic</td><td>26.328<sup>***</sup> (df=52; 397)</td><td>65.173<sup>***</sup> (df=52; 397)</td><td>45.273<sup>***</sup> (df=52; 397)</td><td>10.007<sup>***</sup> (df=52; 397)</td><td>252.545<sup>***</sup> (df=52; 397)</td></tr><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align: left">Note:</td>
+ <td colspan="5" style="text-align: right">
+  <sup>*</sup>p&lt;0.1;
+  <sup>**</sup>p&lt;0.05;
+  <sup>***</sup>p&lt;0.01
+ </td></tr></table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.302</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.2606619351104681
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>1| In the introduction of the paper, Bisschop et al. (2017: 29) state: “Our study is one of the first to provide causal evidence for the connection between the regulation of prostitution and crime.” In the discussion section, Bisschop et al. (2017:44) state: “The opening of a tippelzone with or without a licensing system is correlated with a short-run decrease of 30-40 percent in sexual abuse and rape, and the results are robust to different specifications.” Why do Bisschop et al. (2017) use the word “causal” in the introduction and “correlated” in the discussion section? Do you consider the main results of Bisschop et al. (2017) as “causal” or “correlation”? Justify.</p>
+<p>2| Bisschop et al. (2017: 29) state: “We perform several empirical tests to assess endogenous crime trends around the moment of opening a tippelzone.” Why do they do that? What is the logic of that? Are there or not endogenous crime trends? Justify and be specific in your answer.</p>
+<p>3| Bisschop et al. (2017: 36) state: “… the time trend <span class="math notranslate nohighlight">\(\mu_t\)</span> is modeled using year fixed effects”. What are the other ways to model the time trend? Write different pieces of code to create time trends under different assumptions. Hint: Remember that this is a Panel Data. A proper code that works in Cross-Sectional Data will create the wrong variable in a Panel Data Structure.</p>
+<p>4| Bisschop et al. (2017: 36) state: “We use a difference-in-difference specification to study the effect of the presence of a tippelzone on various types of crime.” What is the key assumption to deploy a difference-in-difference estimator?</p>
+<p>5| Replicate the table “The Impact of Tippelzone on Crime” without Amsterdam, Rotterdam, and Den Haag. Additionally, replace the variable “opening” with the following four variables:</p>
+<p>i) “everopenNoReg”: 1 if city <span class="math notranslate nohighlight">\(c\)</span> ever has open tippelzone in or before year <span class="math notranslate nohighlight">\(t\)</span> which opened without licensing, and 0 otherwise.</p>
+<p>ii) “openingRegP”: 1 if city <span class="math notranslate nohighlight">\(c\)</span> has open tippelzone and introduced licensing ex-post in or before year <span class="math notranslate nohighlight">\(t\)</span>, and 0 otherwise.</p>
+<p>iii) “openingRegA”: 1 if city <span class="math notranslate nohighlight">\(c\)</span> ever has open tippelzone in or before year <span class="math notranslate nohighlight">\(t\)</span> which opened with licensing, and 0 otherwise.</p>
+<p>iv) “closing”: 1 if city <span class="math notranslate nohighlight">\(c\)</span> closes tippelzone in or before year <span class="math notranslate nohighlight">\(t\)</span>, and 0 otherwise.</p>
+<p>Interpret the results.</p>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>Bisschop, Paul, Stephen Kastoryano, and Bas van der Klaauw. (2017). <a class="reference external" href="https://github.com/causal-methods/Papers/raw/master/Street%20Prostitution%20Zones%20and%20Crime.pdf">Street Prostitution Zones and Crime</a>. American Economic Journal: Economic Policy, 9 (4): 28-63.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "causal-methods/Book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="6%29_The_Premium_of_Having_a_White_Female_Name_in_the_Canadian_Job_Market_During_the_Great_Recession_2007_2009.html" title="previous page">6) The Premium of Having a White Female Name in the Canadian Job Market During the Great Recession 2007-2009</a>
+    <a class='right-next' id="next-link" href="8%29_Do_Hosts_Discriminate_against_Black_Guests_in_Airbnb.html" title="next page">8) Do Hosts Discriminate against Black Guests in Airbnb?</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vitor Kamada<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-174984323-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
